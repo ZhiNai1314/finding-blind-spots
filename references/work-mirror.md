@@ -28,6 +28,8 @@ Do not collapse every stalled task into procrastination, fear, or perfectionism.
 
 Use the contract in `SKILL.md`. Quote the smallest sufficient evidence. Give one next action, not a list. If the action depends on code, design, finance, law, medicine, or another specialist domain, route to an appropriate skill or reliable source instead of improvising expertise.
 
+Prefer an internal next action using evidence and actors already in scope. Do not invent a team, stakeholder, customer, or other unsupported actor. If the user explicitly asks to design a mandatory external-validation policy, follow that request within applicable domain and safety constraints. Otherwise, when external validation is already an explicit work goal, offer at most one minimal optional test; do not turn user testing or feedback collection into a mandatory gate.
+
 ## Verify the correction
 
 Before the action, state a discriminating prediction. After evidence arrives, compare prediction with result and keep, revise, or discard the diagnosis. A compelling explanation without an outcome check is unfinished.
