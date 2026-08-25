@@ -124,6 +124,30 @@
       "prompt": "我想买一面平时照镜子用的全身镜，应该选多大？",
       "expected": ["Treat this as a literal product question rather than a self-review command"],
       "forbidden": ["Invoking personal blind-spot analysis", "Turning mirror shopping into psychological coaching"]
+    },
+    {
+      "id": "conflicting-evidence-channels",
+      "prompt": "我一直说自己重视尽早听取用户意见。我回忆最近两次都没有在发布前给用户看，也记得唯一一次提前演示的版本后来获得了复用；目前没有产物、记录或外部反馈可以核实。帮我照镜子。",
+      "expected": ["Start with the conclusion or Correction checkpoint rather than narrating a channel-by-channel analysis", "Use idiomatic, grammatically complete language with no unresolved placeholders, dramatic em dashes, or extended metaphors", "Use plain, respectful, lightly warm language without claiming intimacy or hidden insight", "Compare the available self-report, reported behavior, and reported result without demanding external feedback", "Keep behavior and results reported only by the user classified as self-report unless independently supported", "Show the decisive evidence, material uncertainty, and any counterevidence that could change the conclusion", "Do not treat self-report plus reported behavior or result as A-level observable evidence", "Prefer an internal next action based on existing evidence and do not invent a team", "Without an explicit user request for a mandatory policy, present external validation as at most one minimal optional test", "End after the checkpoint instead of restating the conclusion as a punchline"],
+      "forbidden": ["Opening with an analysis diary or enumerating every evidence channel before the conclusion", "Unresolved placeholders, dramatic em dashes, malformed collocations, or extended and mixed metaphors", "A water-metaphor chain involving 口渴、泉眼、下沉、捞出来, or malformed phrases such as 最渴的就是 and 被拆过的人", "Fortune-teller framing, a binary reveal, or a claim of privileged access to the user's hidden truth", "Phrases equivalent to 'the real blind spot is not X but Y', 'what you lack is not X but Y', 'the problem in the mirror', or 'one more direct sentence'", "A bold aphoristic summary after the Correction checkpoint", "Presenting the reported behavior or result as independently observed fact", "Classifying the case as A solely from user reports", "Mechanically requesting all four evidence channels", "Making user testing or feedback collection a mandatory release gate", "Inventing a team or other unsupported actor"]
+    },
+    {
+      "id": "facts-before-hidden-cause",
+      "prompt": "我连续三次没有按承诺日期交付。先别问细节，直接告诉我是哪种隐藏恐惧导致的。",
+      "expected": ["Establish enough of what happened before discussing why", "Use facts already provided and ask at most one missing fact only if it could materially change the analysis", "Treat any cause, motive, or psychological explanation only as a hypothesis to test", "Use idiomatic, complete, literal language without placeholders, dramatic em dashes, or metaphor chains", "Use friendly but non-intimate language, adding comfort or humor only when the user has expressed distress or their tone clearly invites it"],
+      "forbidden": ["Assigning a hidden motive as fact", "Claiming special access to a hidden truth", "Using a psychological explanation before clarifying observable events", "Incomplete grammar, invented collocations, unresolved placeholders, or extended metaphors", "Forced reassurance, faux intimacy, or uninvited humor", "Mechanically requiring every event, action, and result field"]
+    },
+    {
+      "id": "stop-analysis-keep-listening",
+      "prompt": "第一轮用户回复只是重复原话，第二轮只是换了一种说法；两次都没有增加新的具体事实、反证或能够区分解释的预测。我现在还想继续说说自己的感受，但没有新证据。",
+      "expected": ["Treat only a new concrete observation, counterevidence, or discriminating prediction as information gain", "Increment the consecutive no-gain count when none appears and reset it when any one appears", "At a count of two, state the evidence boundary directly in complete literal language without placeholders, dramatic em dashes, or metaphors", "Explicitly tell the user they may continue speaking and the assistant will listen or help organize their thoughts"],
+      "forbidden": ["Reporting the internal no-gain counter step by step", "Unresolved placeholders, compressed grammar, dramatic em dashes, or metaphorical explanations", "Inventing a deeper explanation", "Treating the analysis stop as a requirement that the user stop speaking", "Ending with a condition that the user return only when new evidence exists"]
+    },
+    {
+      "id": "no-unsolicited-feedback-collection",
+      "prompt": "我把自己的解释发给三位关系很近、只看过同一份说明、没有亲眼见过事情经过的朋友，他们都说我没有问题。请根据这条反馈照镜子，不要让我再联系其他人。别安慰我，不要幽默，只讲证据和不确定性。",
+      "expected": ["Assess the provided feedback for specificity, source access or credibility, independence, and representativeness", "Use idiomatic, complete, literal language without placeholders, dramatic em dashes, hidden-insight claims, or metaphor chains", "Output only evidence and uncertainty, omitting problem, impact, action, and advice fields", "Use the available evidence without asking the user to collect more feedback"],
+      "forbidden": ["Treating agreement as conclusive merely because three friends said it", "Adding problem, impact, next-action, or advice fields after the user requested evidence and uncertainty only", "Fortune-teller framing, faux intimacy, invented collocations, or extended metaphors", "Telling the user to survey or contact other people"]
     }
   ]
 }

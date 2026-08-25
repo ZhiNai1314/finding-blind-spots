@@ -7,25 +7,25 @@ Turn a vague sense of difficulty into a testable problem statement without diagn
 ## One-question loop
 
 1. Ask for one recent concrete episode using one short prompt. Collect only one missing item per turn; do not combine what happened, when, what the user did, and how it felt into a compound question.
-2. On later turns, ask about one missing element at a time: trigger, action, immediate payoff, delayed cost, or an exception.
-3. If the answer stays vague, offer one sentence stem instead of several questions:
+2. Establish enough of the relevant event, action, and result to distinguish plausible explanations before asking why. Use facts already provided; ask only for one missing fact that could materially change the analysis. Treat any cause, motive, or psychological explanation as a hypothesis to test, not a fact.
+3. On later turns, ask about one missing element at a time: trigger, action, immediate payoff, delayed cost, or an exception.
+4. If the answer stays vague, explicitly offer one fill-in sentence stem using labeled brackets instead of underscore blanks:
 
-   `When ___ happened, I did ___; it helped me get or avoid ___ for the moment, but later it cost ___.`
+   `When [specific event] happened, I did [action]; it helped me get or avoid [immediate payoff] for the moment, but later it cost [later cost].`
 
-4. Reuse the user's words. Do not replace them with psychological labels.
-5. After five answers, summarize:
+5. Reuse the user's words. Do not replace them with psychological labels.
+6. Apply the information-gain stop in [evidence-safety.md](evidence-safety.md). Increment the no-gain count when a response adds none of the three qualifying signals; reset it when any one appears. At a count of two, state that the evidence limit has been reached, stop explanatory analysis, and use the required explicit listening message. Do not invent another explanation.
+7. After five answers, summarize:
    - observed facts;
    - self-reported feelings;
    - up to three candidate explanations;
    - evidence and counterevidence for each;
    - missing information and confidence.
-6. Ask the user to correct the summary before continuing.
+8. Ask the user to correct the summary before continuing.
 
 ## Problem statement
 
-Stop clarifying when this can be completed with evidence:
-
-`When [trigger] occurs, I often [behavior]. This gives [short-term payoff], but creates [long-term cost]. The current best explanation is [hypothesis], which would be weakened by [counterexample].`
+Stop clarifying when the evidence supports a statement containing a concrete trigger, behavior, short-term payoff, long-term cost, current hypothesis, and counterexample. Write the statement as complete prose; do not leave labels or blanks in the final sentence.
 
 Then propose one reversible seven-day experiment and the observable result that would support or weaken the hypothesis.
 
